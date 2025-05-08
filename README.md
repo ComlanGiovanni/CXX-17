@@ -2,8 +2,6 @@
   <img src="https://img.shields.io/badge/C%2B%2B-17-blue.svg" alt="C++17"/>
 </div>
 
-<br/>
-
 <div align="center">
   <em>
     <h3>
@@ -13,5 +11,3 @@
   </em>
   <p>— Bjarne Stroustrup</p>
 </div>
-
-<br/>
