@@ -1,128 +1,238 @@
-# Exercices du Module 0: Fondamentaux C++ Revisités
+# Exercices du Module 0: Bases Fondamentales du C++
 
-## Exercice 1: Manipulation de Types et Variables
+## Exercice 1: Premier Pas en C++
 
-### 1.1 Exploration des Types
-Créez un programme qui:
-1. Déclare et initialise des variables de différents types (int, double, char, bool)
-2. Affiche leur valeur, taille en mémoire et adresse
-3. Utilise les littéraux numériques avec séparateurs de C++17
+### 1.1 Hello, World!
+Créez un programme qui affiche "Hello, World!" à l'écran.
 
 ```cpp
 // Exemple de sortie attendue:
-// Variable: x, Type: int, Valeur: 42, Taille: 4 bytes, Adresse: 0x7ffd5fbff8ac
+// Hello, World!
 ```
 
-### 1.2 Inférence de Type avec auto
-Modifiez le programme précédent pour utiliser `auto` pour déclarer certaines variables.
-Créez des exemples où `auto` est utile et d'autres où il peut être problématique.
+### 1.2 Compilation et Exécution
+Compilez et exécutez le programme en utilisant les options suivantes:
+- Sans options
+- Avec l'option `-std=c++17`
+- Avec les options `-Wall -Wextra -Werror`
+- Avec toutes les options combinées
 
-### 1.3 Structured Binding
-Écrivez un programme qui utilise la fonctionnalité de structured binding pour:
-1. Extraire les éléments d'un `std::pair`
-2. Parcourir et afficher les clés et valeurs d'un `std::map`
-3. Manipuler un tableau ou une structure personnalisée
+Documentez les différences observées, s'il y en a.
 
-## Exercice 2: Références et Pointeurs
+### 1.3 Commentaires et Documentation
+Modifiez votre programme "Hello, World!" pour inclure:
+- Des commentaires sur une ligne (`//`)
+- Des commentaires sur plusieurs lignes (`/* */`)
+- Une brève documentation expliquant ce que fait le programme
 
-### 2.1 Comparaison de Références et Pointeurs
-Créez un programme démontrant:
-1. La différence entre passage par valeur, référence et pointeur
-2. Les bonnes pratiques pour le choix entre référence et pointeur
-3. L'utilisation de `nullptr` plutôt que `NULL`
+## Exercice 2: Variables et Types de Données
 
-### 2.2 Références rvalue
-Écrivez une fonction qui accepte une référence rvalue et une autre qui accepte une référence lvalue.
-Démontrez quand chacune d'elles est appelée avec différents types d'arguments.
-
-## Exercice 3: Expressions et Opérateurs
-
-### 3.1 Utilisation de if constexpr
-Créez une fonction template qui se comporte différemment selon le type:
-1. Pour les types entiers, effectue une opération arithmétique
-2. Pour les types à virgule flottante, effectue une opération différente
-3. Pour les chaînes, effectue une concaténation
-
-Utilisez `if constexpr` pour la sélection conditionnelle à la compilation.
-
-### 3.2 Fold Expressions
-Écrivez des fonctions templates variadiques utilisant les fold expressions pour:
-1. Calculer la somme de tous les arguments
-2. Concaténer toutes les chaînes passées en argument
-3. Trouver le minimum ou maximum de tous les arguments
-
-## Exercice 4: Structures de Contrôle Modernes
-
-### 4.1 Range-Based For Loop
-Implémentez une classe qui stocke une collection et fournit:
-1. Des méthodes `begin()` et `end()` pour permettre l'itération avec range-based for loop
-2. Une démonstration d'utilisation avec différents types de conteneurs
-
-### 4.2 If et Switch avec Initialisation
-Réécrivez des blocs conditionnels existants en utilisant les nouvelles syntaxes C++17:
-1. Convertissez des blocs if classiques en if avec initialisation
-2. Convertissez des blocs switch classiques en switch avec initialisation
-
-## Exercice 5: Fonctions et Lambda
-
-### 5.1 Surcharge de Fonctions
-Créez un ensemble de fonctions surchargées `print` qui:
-1. Gèrent différents types (entiers, flottants, chaînes, etc.)
-2. Formatent différemment selon le type
-3. Acceptent un paramètre optionnel pour personnaliser l'affichage
-
-### 5.2 Lambdas Avancées
+### 2.1 Déclaration et Initialisation
 Écrivez un programme qui:
-1. Utilise des lambdas simples, avec capture, et génériques
-2. Implémente un algorithme de tri personnalisé avec une lambda comme prédicat
-3. Utilise `std::function` pour stocker des lambdas et les utiliser plus tard
+1. Déclare et initialise des variables de différents types (int, double, char, bool)
+2. Affiche leurs valeurs
+3. Affiche leur taille en mémoire (utilisez `sizeof()`)
+4. Utilise les trois styles d'initialisation (=, (), {})
 
-## Exercice 6: Namespaces
+```cpp
+// Exemple de sortie attendue:
+// Variable: age, Type: int, Valeur: 25, Taille: 4 bytes
+// Variable: pi, Type: double, Valeur: 3.14159, Taille: 8 bytes
+// ...
+```
 
-### 6.1 Organisation du Code
-Créez une petite bibliothèque avec:
-1. Namespaces imbriqués pour organiser le code (par exemple: Game::Graphics, Game::Audio)
-2. Démonstration de la nouvelle syntaxe C++17 pour les namespaces imbriqués
-3. Utilisation appropriée de using declaration vs. using directive
+### 2.2 Constantes
+Créez un programme qui utilise:
+1. Des constantes littérales (nombres, caractères, chaînes)
+2. Des variables constantes (`const`)
+3. Des expressions constantes (`constexpr` si disponible)
 
-## Exercice 7: Gestion des Erreurs Moderne
+### 2.3 Conversion de Types
+Écrivez un programme démontrant:
+1. Les conversions implicites entre types numériques
+2. Les conversions explicites (casts) entre différents types
+3. Les problèmes potentiels liés aux conversions (perte de précision, dépassement)
 
-### 7.1 std::optional
-Implémentez des fonctions qui utilisent `std::optional` pour:
-1. Rechercher un élément dans un conteneur
-2. Analyser une entrée qui pourrait être invalide
-3. Enchaîner des opérations qui peuvent échouer
+## Exercice 3: Opérateurs et Expressions
 
-### 7.2 std::variant
-Créez une classe qui utilise `std::variant` pour:
-1. Stocker différents types de données dans un même champ
-2. Utiliser `std::visit` pour traiter les différentes variantes
-3. Implémenter un petit système de messages polymorphes sans héritage
+### 3.1 Calculatrice Simple
+Créez une calculatrice en ligne de commande qui:
+1. Demande à l'utilisateur deux nombres
+2. Effectue les opérations de base (+, -, *, /, %)
+3. Affiche les résultats
 
-## Projet Mini: Gestionnaire de Tâches Moderne
+```cpp
+// Exemple d'interaction:
+// Entrez le premier nombre: 10
+// Entrez le deuxième nombre: 3
+// Addition: 13
+// Soustraction: 7
+// Multiplication: 30
+// Division: 3.333
+// Modulo: 1
+```
 
-Créez un gestionnaire de tâches simple qui combine plusieurs concepts du module:
+### 3.2 Opérateurs de Comparaison
+Écrivez un programme qui:
+1. Compare deux valeurs en utilisant différents opérateurs (==, !=, >, <, >=, <=)
+2. Affiche les résultats des comparaisons
+3. Utilise des expressions composées avec les opérateurs logiques (&&, ||, !)
+
+### 3.3 Opérateurs Bit à Bit
+Créez un programme qui démontre l'utilisation des opérateurs bit à bit:
+1. AND (&), OR (|), XOR (^), NOT (~)
+2. Décalages à gauche (<<) et à droite (>>)
+3. Affichez les résultats en binaire et en décimal
+
+## Exercice 4: Structures de Contrôle
+
+### 4.1 Conditionnelles
+Écrivez un programme qui:
+1. Demande l'âge de l'utilisateur
+2. Utilise des structures if-else pour déterminer la catégorie d'âge
+3. Affiche un message personnalisé selon la catégorie
+
+```cpp
+// Exemple d'interaction:
+// Entrez votre âge: 17
+// Vous êtes un adolescent.
+```
+
+### 4.2 Switch
+Créez un programme de conversion de notes qui:
+1. Demande une note numérique (0-100)
+2. Utilise switch pour convertir en note alphabétique (A, B, C, D, F)
+3. Affiche la note alphabétique
+
+### 4.3 Boucles
+Écrivez des programmes distincts qui utilisent:
+1. Une boucle for pour afficher les nombres de 1 à 10
+2. Une boucle while pour calculer la somme des nombres de 1 à n (saisi par l'utilisateur)
+3. Une boucle do-while pour créer un menu simple qui s'exécute jusqu'à ce que l'utilisateur choisisse de quitter
+
+## Exercice 5: Fonctions
+
+### 5.1 Définition et Appel de Fonctions
+Créez un programme avec:
+1. Une fonction qui calcule le carré d'un nombre
+2. Une fonction qui calcule le cube d'un nombre
+3. Une fonction qui calcule la puissance n d'un nombre
+4. Une fonction principale qui appelle les autres fonctions et affiche les résultats
+
+### 5.2 Surcharge de Fonctions
+Écrivez un programme qui:
+1. Définit plusieurs fonctions `max` pour différents types (int, double, char)
+2. Démontre comment le compilateur choisit la fonction appropriée selon les arguments
+3. Utilise ces fonctions pour trouver le maximum de différentes paires de valeurs
+
+### 5.3 Portée et Durée de Vie
+Créez un programme démontrant:
+1. Variables locales et globales
+2. Variables statiques dans les fonctions
+3. Comment la portée affecte l'accès aux variables
+
+```cpp
+// Exemple:
+#include <iostream>
+
+int compteurGlobal = 0;  // Variable globale
+
+void incrementer() {
+    static int compteurStatique = 0;  // Variable statique locale
+    int compteurLocal = 0;  // Variable locale
+
+    compteurGlobal++;
+    compteurStatique++;
+    compteurLocal++;
+
+    std::cout << "Global: " << compteurGlobal << ", Statique: " << compteurStatique
+              << ", Local: " << compteurLocal << std::endl;
+}
+
+int main() {
+    for (int i = 0; i < 3; i++) {
+        incrementer();
+    }
+    return 0;
+}
+// Sortie attendue:
+// Global: 1, Statique: 1, Local: 1
+// Global: 2, Statique: 2, Local: 1
+// Global: 3, Statique: 3, Local: 1
+```
+
+## Exercice 6: Tableaux et Chaînes
+
+### 6.1 Tableaux à Une Dimension
+Écrivez un programme qui:
+1. Déclare et initialise un tableau d'entiers
+2. Calcule la somme, la moyenne, le minimum et le maximum des éléments
+3. Recherche un élément spécifique dans le tableau
+
+### 6.2 Tableaux à Deux Dimensions
+Créez un programme qui:
+1. Définit une matrice 3x3
+2. Calcule la somme de chaque ligne et colonne
+3. Affiche la matrice sous forme de tableau
+
+### 6.3 Manipulation de Chaînes
+Écrivez un programme qui:
+1. Utilise des chaînes de style C (char[])
+2. Utilise des chaînes de style C++ (std::string)
+3. Implémente des opérations comme la concaténation, l'extraction de sous-chaînes, la recherche
+
+## Exercice 7: Entrées/Sorties
+
+### 7.1 Lecture/Écriture Console
+Créez un programme qui:
+1. Demande des informations à l'utilisateur (nom, âge, hauteur)
+2. Valide les entrées (âge doit être positif, etc.)
+3. Affiche un résumé formaté des informations
+
+### 7.2 Formatage des Sorties
+Écrivez un programme qui:
+1. Affiche des nombres avec différentes précisions
+2. Utilise des champs de largeur fixe pour aligner les sorties
+3. Affiche des nombres dans différentes bases (décimal, hexadécimal, octal)
+
+```cpp
+// Exemple de sortie:
+// Décimal: 42, Hexadécimal: 0x2A, Octal: 052
+// Pi (2 décimales): 3.14
+// Pi (5 décimales): 3.14159
+// |    Nom    |  Age  |  Taille  |
+// |-----------|-------|----------|
+// |   Alice   |   25  |  1.65m   |
+// |    Bob    |   30  |  1.80m   |
+```
+
+### 7.3 Lecture/Écriture Fichiers (optionnel)
+Créez un programme qui:
+1. Écrit des données dans un fichier texte
+2. Lit des données depuis un fichier texte
+3. Analyse et affiche les données lues
+
+## Projet Mini: Carnet d'Adresses Console
+
+Créez un carnet d'adresses simple en console qui combine plusieurs concepts du module:
 
 1. **Modèle de données**:
-   - Définir une structure `Task` avec id, titre, description, priorité, date limite, etc.
-   - Utiliser `std::optional` pour les champs optionnels
-   - Utiliser `std::variant` pour permettre différents types de tâches
+   - Définir une structure `Contact` avec nom, téléphone, email, etc.
+   - Utiliser un tableau pour stocker plusieurs contacts (max 100)
 
-2. **Stockage**:
-   - Utiliser des conteneurs modernes pour stocker les tâches
-   - Implémenter des méthodes pour ajouter, supprimer, rechercher des tâches
+2. **Interface utilisateur**:
+   - Menu interactif en console
+   - Options pour ajouter, rechercher, afficher, modifier et supprimer des contacts
 
-3. **Interface**:
-   - Créer une interface en ligne de commande simple
-   - Utiliser des lambdas pour les callbacks et le traitement
-   - Implémenter une fonction de recherche flexible
+3. **Fonctionnalités**:
+   - Validation des entrées utilisateur
+   - Recherche par nom ou téléphone
+   - Affichage formaté des contacts
+   - Gestion des erreurs basique
 
-4. **Outils**:
-   - Fournir des outils pour filtrer/trier les tâches
-   - Permettre l'export/import des tâches (format texte simple)
+4. **Organisation du code**:
+   - Diviser le programme en fonctions
+   - Utiliser des commentaires explicatifs
+   - Structurer le code de manière claire et lisible
 
-5. **Organisation**:
-   - Organiser le code en namespaces appropriés
-   - Utiliser des bonnes pratiques modernes C++17
-
-Ce projet vous permettra d'appliquer tous les concepts du module dans un contexte pratique et de vous préparer pour les modules suivants qui exploreront la POO et d'autres fonctionnalités avancées.
+Ce projet vous permettra d'appliquer tous les concepts fondamentaux du C++ abordés dans ce module, en créant une application console complète et utile.

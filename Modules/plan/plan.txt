@@ -1,90 +1,116 @@
 # PLAN D'APPRENTISSAGE C++17
 
-## Module 0: Fondamentaux C++ Revisités
-- Types de données et variables améliorés
-- Références et pointeurs modernes
-- Expressions et opérateurs
-- Structures de contrôle
-- Fonctions et surcharge
-- Introduction aux espaces de noms (namespaces)
-- Gestion des erreurs moderne
+## Module 0: Bases Fondamentales du C++
+- Introduction à la programmation C++
+- Types de données et variables (int, double, char, bool)
+- Opérateurs arithmétiques et logiques basiques
+- Structures de contrôle (if, else, for, while)
+- Fonctions et procédures
+- Arguments et valeurs de retour
+- Introduction aux tableaux et chaînes
+- Entrées/sorties console (iostream)
 
-## Module 1: POO Fondamentale
+## Module 1: Fondamentaux des Structures de Données
+- Pointeurs et références basiques
+- Tableaux dynamiques
+- Structures et énumérations
+- Introduction aux conteneurs (vector, array)
+- Manipulation des chaînes de caractères
+- Passage de paramètres (valeur, référence, pointeur)
+- Portée et durée de vie des variables
+
+## Module 2: POO Fondamentale
 - Classes et objets
-- Encapsulation
+- Encapsulation et accesseurs
 - Constructeurs et destructeurs
 - Membres statiques
 - L'opérateur this
 - Surcharge d'opérateurs
+- Introduction aux fichiers d'en-tête
+
+## Module 3: Héritage et Polymorphisme
 - Héritage simple
-- Polymorphisme et fonctions virtuelles
+- Fonctions membres virtuelles
+- Polymorphisme
 - Classes abstraites et interfaces
+- Override et final
+- Composition vs héritage
 
-## Module 2: POO Avancée et Spécificités C++17
-- Héritage multiple
-- RAII (Resource Acquisition Is Initialization)
-- Fonctions et classes templates
+## Module 4: Templates et Programmation Générique
+- Fonctions templates
+- Classes templates
+- Templates de variables
 - Spécialisation de templates
-- Concepts (C++20, introduction)
-- Smart pointers (unique_ptr, shared_ptr, weak_ptr)
-- Move semantics et références rvalue
-- Perfect forwarding
+- Introduction aux concepts (C++20)
+- Méta-programmation basique
 
-## Module 3: Bibliothèque Standard C++17
-- Conteneurs (vector, array, map, unordered_map, etc.)
+## Module 5: Bibliothèque Standard C++
+- Conteneurs (vector, map, unordered_map, etc.)
 - Algorithmes STL
 - Itérateurs
-- std::string et std::string_view
-- Programmation fonctionnelle en C++17
-- Lambda expressions avancées
+- std::string
+- Foncteurs et prédicats
+- Introduction aux lambdas
+
+## Module 6: Spécificités C++17
+- Auto et inférence de type
+- Structured binding
+- If et switch avec initialisation
+- Fold expressions
+- Smart pointers (unique_ptr, shared_ptr, weak_ptr)
 - std::optional, std::variant, std::any
 - std::filesystem
+- Lambda expressions avancées
+- Namespaces imbriqués
 
-## Module 4: Concurrence et Parallélisme
+## Module 7: Gestion des Ressources
+- RAII (Resource Acquisition Is Initialization)
+- Move semantics et références rvalue
+- Perfect forwarding
+- Allocateurs personnalisés
+- Cache-friendly programming
+- Optimisation des données (SoA vs AoS)
+- Profiles de performance et benchmarking
+
+## Module 8: Concurrence et Parallélisme
 - Threads et gestion des threads
 - Synchronisation (mutex, atomic, condition variables)
 - Futures et promises
 - Parallel STL
 - Modèles de concurrence pour les jeux
 
-## Module 5: Patterns de Conception pour les Jeux
+## Module 9: Patterns de Conception pour les Jeux
 - Singleton
 - Factory
 - Observer
 - Strategy
-- Component
-- Entity-Component-System (ECS)
 - Command
 - State
-- Implémentation de ces patterns en C++17
+- Entity-Component-System (ECS)
+- Implémentation des patterns en C++17
 
-## Module 6: Gestion de la Mémoire et Performance
-- Allocateurs personnalisés
-- Cache-friendly programming
-- Optimisation des données (SoA vs AoS)
-- Profiles de performance et benchmarking
-- Techniques d'optimisation C++
-
-## Module 7: Interaction avec les APIs de Jeux
+## Module 10: Développement de Jeu
 - Introduction à OpenGL/Vulkan
 - Intégration avec SDL2
 - Audio programming
 - Physics basics
 - Input handling
-
-## Module 8: Projet Final - Mini Moteur de Jeu
-- Architecture d'un moteur de jeu simple
 - Boucle de jeu
 - Systèmes de rendu
 - Gestion des ressources
+
+## Module 11: Projet Final - Mini Moteur de Jeu
+- Architecture d'un moteur de jeu simple
+- Implémentation des systèmes fondamentaux
 - Scripting
 - Développement d'un mini-jeu utilisant le moteur
 
-## Module 9: Introduction aux Moteurs Professionnels
-- Intégration avec Unreal Engine (C++)
-- Comparaison avec Unity et Godot
-- Meilleures pratiques
-- Développement Cross-platform
+## Module 12: C++98 vs C++17 - Évolution et Modernisation
+- Comparaison des approches
+- Modernisation du code legacy
+- Stratégies de migration
+- Bonnes pratiques modernes
+- Introduction aux Moteurs Professionnels (Unreal Engine, Unity, Godot)
 
 ## Examen Final
 - Projet personnel étendu

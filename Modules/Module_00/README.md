@@ -1,376 +1,390 @@
-# Module 0: Fondamentaux C++ Revisités
+# Module 0: Bases Fondamentales du C++
 
-Ce module couvre les bases fondamentales de C++ avec un focus particulier sur les améliorations apportées dans C++17 par rapport à C++98.
+Ce module introductif couvre les concepts fondamentaux de la programmation en C++ nécessaires pour établir une base solide avant d'aborder les caractéristiques avancées et spécifiques de C++17.
 
-## 1. Types de données et variables améliorés
+## 1. Introduction à la Programmation C++
 
-### Types de base
+### Historique et Évolution
 ```cpp
-// Types numériques
-int a = 42;                  // 4 bytes (généralement)
-long long b = 1234567890LL;  // 8 bytes
-float c = 3.14f;             // 4 bytes
-double d = 3.141592;         // 8 bytes
-
-// C++17: littéraux numériques avec séparateurs pour plus de lisibilité
-int million = 1'000'000;     // Plus lisible que 1000000
+// Le C++ a été créé par Bjarne Stroustrup dans les années 1980
+// comme une extension orientée objet du langage C
+// C++98, C++03, C++11, C++14, C++17...
 ```
 
-### auto
+### Processus de Compilation
 ```cpp
-// C++98: typage explicite obligatoire
-std::vector<std::string>::iterator it = v.begin();
-
-// C++11/17: inférence de type avec auto
-auto it = v.begin();  // Beaucoup plus lisible
+// Source (.cpp) → Préprocesseur → Compilation → Édition de liens → Exécutable
+// g++ -std=c++17 -Wall -Wextra -Werror main.cpp -o program
 ```
 
-### Initialisation uniforme
+### Premier Programme
 ```cpp
-// C++98
-int arr[] = {1, 2, 3};
-std::vector<int> vec;
-vec.push_back(1);
-vec.push_back(2);
+// hello.cpp
+#include <iostream>
 
-// C++11/17
-std::vector<int> vec = {1, 2, 3};  // Liste d'initialisation
-std::map<std::string, int> scores = {{"Alice", 100}, {"Bob", 90}};
-```
-
-### Type Deduction avec decltype
-```cpp
-auto x = 42;
-decltype(x) y = 23;  // y est de type int
-```
-
-### Structured Binding (C++17)
-```cpp
-// Accès aux éléments d'une paire
-std::pair<std::string, int> person = {"Alice", 30};
-auto [name, age] = person;
-std::cout << name << " is " << age << " years old\n";
-
-// Avec map
-std::map<std::string, int> scores = {{"Alice", 100}, {"Bob", 90}};
-for (const auto& [name, score] : scores) {
-    std::cout << name << ": " << score << "\n";
+int main() {
+    std::cout << "Hello, World!" << std::endl;
+    return 0;
 }
 ```
 
-## 2. Références et Pointeurs Modernes
+## 2. Types de Données et Variables
 
-### Références vs Pointeurs
+### Types Primitifs
 ```cpp
-void incrementByRef(int& num) {
-    num++;  // Modifie directement la variable originale
-}
+int entier = 42;                 // Entier signé
+unsigned int nonSigne = 42u;     // Entier non signé
+float decimal = 3.14f;           // Nombre à virgule flottante simple précision
+double precision = 3.141592;     // Nombre à virgule flottante double précision
+char caractere = 'A';            // Caractère unique
+bool booleen = true;             // Valeur booléenne (true/false)
+```
 
-void incrementByPtr(int* num) {
-    (*num)++;  // Déréférencement nécessaire
-}
+### Modificateurs
+```cpp
+short int petitEntier = 42;      // Entier court (généralement 2 octets)
+long int grandEntier = 42L;      // Entier long (généralement 4 octets)
+long long treGrandEntier = 42LL; // Entier très long (généralement 8 octets)
+const int CONSTANTE = 100;       // Valeur qui ne peut pas être modifiée
+```
 
+### Déclaration et Initialisation
+```cpp
+// Différentes façons d'initialiser des variables
+int a = 10;              // Initialisation par copie
+int b(20);               // Initialisation directe
+int c{30};               // Initialisation uniforme (préférée en C++ moderne)
+
+// Variables non initialisées (à éviter)
+int nonInitialise;       // Valeur indéterminée!
+```
+
+## 3. Opérateurs
+
+### Opérateurs Arithmétiques
+```cpp
+int a = 10, b = 3;
+int somme = a + b;       // 13
+int difference = a - b;  // 7
+int produit = a * b;     // 30
+int quotient = a / b;    // 3 (division entière)
+int reste = a % b;       // 1 (modulo)
+
+// Incrémentation et décrémentation
+int x = 5;
+x++;                     // x devient 6 (post-incrémentation)
+++x;                     // x devient 7 (pré-incrémentation)
+x--;                     // x devient 6 (post-décrémentation)
+--x;                     // x devient 5 (pré-décrémentation)
+```
+
+### Opérateurs de Comparaison
+```cpp
+bool estEgal = (a == b);        // false
+bool estDifferent = (a != b);   // true
+bool estPlusGrand = (a > b);    // true
+bool estPlusPetit = (a < b);    // false
+bool estSupEgal = (a >= b);     // true
+bool estInfEgal = (a <= b);     // false
+```
+
+### Opérateurs Logiques
+```cpp
+bool condition1 = true;
+bool condition2 = false;
+
+bool etLogique = condition1 && condition2;  // false (ET logique)
+bool ouLogique = condition1 || condition2;  // true (OU logique)
+bool negation = !condition1;                // false (NON logique)
+```
+
+### Opérateurs d'Affectation
+```cpp
 int x = 10;
-incrementByRef(x);   // x vaut maintenant 11
-incrementByPtr(&x);  // x vaut maintenant 12
-```
-
-### nullptr (C++11)
-```cpp
-// C++98
-int* oldPtr = NULL;  // ou int* oldPtr = 0;
-
-// C++11/17
-int* modernPtr = nullptr;  // Type sûr, évite les conversions ambiguës
-```
-
-### Références rvalue et lvalue
-```cpp
-// lvalue reference - référence à une valeur stockée
-int x = 10;
-int& rx = x;  // rx est une référence à x
-
-// rvalue reference - référence à une valeur temporaire (C++11)
-int&& rr = 42;  // rr est une référence à une valeur temporaire (42)
-```
-
-## 3. Expressions et Opérateurs
-
-### Opérateurs Classiques
-```cpp
-// Arithmétiques: +, -, *, /, %
-int sum = 5 + 3;       // 8
-int quotient = 10 / 3; // 3 (division entière)
-int remainder = 10 % 3; // 1 (reste)
-
-// Comparaison: ==, !=, >, <, >=, <=
-bool isEqual = (5 == 5);  // true
-
-// Logiques: &&, ||, !
-bool condition = (true && false);  // false (ET logique)
-```
-
-### Nouveautés C++17
-```cpp
-// Expressions constantes if
-if constexpr (std::is_integral<T>::value) {
-    // Ce code n'est compilé que si T est un type entier
-} else {
-    // Ce code n'est compilé que si T n'est pas un type entier
-}
-
-// Opérateur de repli (fold expressions) pour les templates variadiques
-template<typename... Args>
-auto sum(Args... args) {
-    return (... + args);  // (a + b + c + ...)
-}
+x += 5;      // x = x + 5 (x devient 15)
+x -= 3;      // x = x - 3 (x devient 12)
+x *= 2;      // x = x * 2 (x devient 24)
+x /= 4;      // x = x / 4 (x devient 6)
+x %= 4;      // x = x % 4 (x devient 2)
 ```
 
 ## 4. Structures de Contrôle
 
-### Structures Classiques
+### Conditionnelles
 ```cpp
-// if-else
-if (condition) {
-    // code
-} else if (otherCondition) {
-    // code
-} else {
-    // code
+int age = 18;
+
+// if simple
+if (age >= 18) {
+    std::cout << "Majeur" << std::endl;
 }
 
-// switch
-switch (value) {
+// if-else
+if (age >= 18) {
+    std::cout << "Majeur" << std::endl;
+} else {
+    std::cout << "Mineur" << std::endl;
+}
+
+// if-else if-else
+if (age < 13) {
+    std::cout << "Enfant" << std::endl;
+} else if (age < 18) {
+    std::cout << "Adolescent" << std::endl;
+} else if (age < 65) {
+    std::cout << "Adulte" << std::endl;
+} else {
+    std::cout << "Senior" << std::endl;
+}
+
+// Opérateur ternaire
+std::string statut = (age >= 18) ? "Majeur" : "Mineur";
+```
+
+### Switch
+```cpp
+int jour = 2;
+switch (jour) {
     case 1:
-        // code pour value == 1
+        std::cout << "Lundi" << std::endl;
         break;
     case 2:
-        // code pour value == 2
+        std::cout << "Mardi" << std::endl;
+        break;
+    // ...
+    case 7:
+        std::cout << "Dimanche" << std::endl;
         break;
     default:
-        // code par défaut
-}
-
-// boucles
-for (int i = 0; i < 10; i++) { /* code */ }
-while (condition) { /* code */ }
-do { /* code */ } while (condition);
-```
-
-### Boucle For Moderne (C++11/17)
-```cpp
-std::vector<int> numbers = {1, 2, 3, 4, 5};
-
-// C++98
-for (std::vector<int>::iterator it = numbers.begin(); it != numbers.end(); ++it) {
-    std::cout << *it << " ";
-}
-
-// C++11/17
-for (const auto& num : numbers) {
-    std::cout << num << " ";
+        std::cout << "Jour invalide" << std::endl;
 }
 ```
 
-### if avec initialisation (C++17)
+### Boucles
 ```cpp
-// C++98
-std::map<std::string, int> scores = {{"Alice", 95}, {"Bob", 87}};
-auto it = scores.find("Alice");
-if (it != scores.end()) {
-    use_score(it->second);
+// Boucle for
+for (int i = 0; i < 5; i++) {
+    std::cout << i << " ";  // Affiche: 0 1 2 3 4
 }
 
-// C++17
-if (auto it = scores.find("Alice"); it != scores.end()) {
-    use_score(it->second);
+// Boucle while
+int j = 0;
+while (j < 5) {
+    std::cout << j << " ";  // Affiche: 0 1 2 3 4
+    j++;
+}
+
+// Boucle do-while (exécutée au moins une fois)
+int k = 0;
+do {
+    std::cout << k << " ";  // Affiche: 0 1 2 3 4
+    k++;
+} while (k < 5);
+
+// Instructions de contrôle de boucle
+for (int i = 0; i < 10; i++) {
+    if (i == 3) continue;  // Saute à l'itération suivante
+    if (i == 7) break;     // Sort de la boucle
+    std::cout << i << " ";  // Affiche: 0 1 2 4 5 6
 }
 ```
 
-### switch avec initialisation (C++17)
+## 5. Fonctions et Procédures
+
+### Déclaration et Définition
 ```cpp
-switch (auto value = getValue(); value) {
-    case 1: /* code */ break;
-    case 2: /* code */ break;
-    default: /* code */
-}
-```
+// Déclaration de fonction (prototype)
+int additionner(int a, int b);
 
-## 5. Fonctions et Surcharge
-
-### Surcharge de Fonctions
-```cpp
-void print(int value) {
-    std::cout << "Integer: " << value << std::endl;
+// Définition de fonction
+int additionner(int a, int b) {
+    return a + b;
 }
 
-void print(double value) {
-    std::cout << "Double: " << value << std::endl;
+// Fonction sans valeur de retour (procédure)
+void afficherMessage(const std::string& message) {
+    std::cout << message << std::endl;
 }
 
-void print(const std::string& value) {
-    std::cout << "String: " << value << std::endl;
-}
+// Utilisation
+int somme = additionner(5, 3);  // somme = 8
+afficherMessage("Bonjour!");    // Affiche: Bonjour!
 ```
 
 ### Paramètres par Défaut
 ```cpp
-void greet(const std::string& name = "Guest") {
-    std::cout << "Hello, " << name << "!" << std::endl;
+void saluer(const std::string& nom = "Monde") {
+    std::cout << "Bonjour, " << nom << "!" << std::endl;
 }
 
-greet();           // "Hello, Guest!"
-greet("Alice");    // "Hello, Alice!"
+saluer();            // Affiche: Bonjour, Monde!
+saluer("Alice");     // Affiche: Bonjour, Alice!
 ```
 
-### Fonctions Inline
+### Surcharge de Fonctions
 ```cpp
-inline int square(int x) {
-    return x * x;
-}
-```
-
-### Fonctions Lambda (C++11/17)
-```cpp
-// Lambda simple
-auto add = [](int a, int b) { return a + b; };
-std::cout << add(2, 3) << std::endl;  // 5
-
-// Capture de variables
-int multiplier = 3;
-auto times = [multiplier](int x) { return x * multiplier; };
-std::cout << times(4) << std::endl;  // 12
-
-// C++14/17: lambdas génériques
-auto genericFunc = [](auto x, auto y) { return x + y; };
-std::cout << genericFunc(2, 3) << std::endl;      // 5
-std::cout << genericFunc(2.5, 3.5) << std::endl;  // 6.0
-```
-
-## 6. Espaces de Noms (Namespaces)
-
-### Définition et Utilisation
-```cpp
-// Définition d'un namespace
-namespace Math {
-    const double PI = 3.14159265358979323846;
-
-    double square(double x) {
-        return x * x;
-    }
-
-    double cube(double x) {
-        return x * x * x;
-    }
+// Même nom, différents paramètres
+int multiplier(int a, int b) {
+    return a * b;
 }
 
-// Utilisation
-double area = Math::PI * Math::square(radius);
-```
-
-### Namespace Imbriqués
-```cpp
-namespace Game {
-    namespace Graphics {
-        class Renderer { /*...*/ };
-    }
-
-    namespace Audio {
-        class SoundEngine { /*...*/ };
-    }
+double multiplier(double a, double b) {
+    return a * b;
 }
 
-// C++17: déclaration simplifiée des namespace imbriqués
-namespace Game::Graphics::Utils {
-    class TextureLoader { /*...*/ };
+int resultat1 = multiplier(5, 3);        // Appelle la première version
+double resultat2 = multiplier(2.5, 1.5);  // Appelle la deuxième version
+```
+
+## 6. Arguments et Valeurs de Retour
+
+### Passage par Valeur
+```cpp
+void incrementer(int n) {
+    n++;  // Modifie la copie locale
+}
+
+int x = 5;
+incrementer(x);  // x reste 5
+```
+
+### Passage par Référence
+```cpp
+void incrementer(int& n) {
+    n++;  // Modifie directement la variable passée
+}
+
+int x = 5;
+incrementer(x);  // x devient 6
+```
+
+### Retour de Valeurs
+```cpp
+// Retour simple
+int carre(int n) {
+    return n * n;
+}
+
+// Retour par référence (avancé)
+int& obtenirElement(std::vector<int>& v, size_t index) {
+    return v[index];  // Retourne une référence à l'élément
 }
 ```
 
-### Using Declaration et Directive
-```cpp
-// Using declaration (importe un seul élément)
-using Math::PI;
-double circumference = PI * 2 * radius;
+## 7. Tableaux et Chaînes de Caractères
 
-// Using directive (importe tout le namespace)
-using namespace Math;
-double volume = cube(side);
+### Tableaux Statiques
+```cpp
+// Déclaration et initialisation
+int nombres[5] = {10, 20, 30, 40, 50};
+
+// Accès aux éléments
+int deuxieme = nombres[1];  // 20 (les indices commencent à 0)
+
+// Modification d'un élément
+nombres[2] = 35;  // Le tableau devient {10, 20, 35, 40, 50}
+
+// Tableaux multidimensionnels
+int matrice[2][3] = {
+    {1, 2, 3},
+    {4, 5, 6}
+};
 ```
 
-## 7. Gestion des Erreurs Moderne
-
-### Exceptions
+### Chaînes de Caractères Style C
 ```cpp
-try {
-    int* arr = new int[1000000000000];  // Peut provoquer std::bad_alloc
-    // ...
-} catch (const std::bad_alloc& e) {
-    std::cerr << "Allocation failed: " << e.what() << std::endl;
-} catch (const std::exception& e) {
-    std::cerr << "Standard exception: " << e.what() << std::endl;
-} catch (...) {
-    std::cerr << "Unknown exception occurred" << std::endl;
-}
+// Chaîne terminée par le caractère nul '\0'
+char nom[10] = "Alice";
+
+// Fonctions de manipulation (de la bibliothèque <cstring>)
+#include <cstring>
+char destination[20];
+strcpy(destination, nom);        // Copie
+strcat(destination, " Bob");     // Concaténation
+size_t longueur = strlen(nom);   // Calcul de la longueur
 ```
 
-### std::optional (C++17)
+### Chaînes de Caractères C++ (std::string)
 ```cpp
-#include <optional>
-
-std::optional<std::string> getUserName(int id) {
-    if (id == 1) {
-        return "Alice";
-    } else if (id == 2) {
-        return "Bob";
-    }
-    return std::nullopt;  // Aucune valeur
-}
-
-auto name = getUserName(3);
-if (name) {
-    std::cout << "User name: " << *name << std::endl;
-} else {
-    std::cout << "User not found" << std::endl;
-}
-```
-
-### std::variant (C++17)
-```cpp
-#include <variant>
 #include <string>
 
-std::variant<int, std::string, double> value;
+std::string prenom = "Alice";
+std::string nom = "Smith";
 
-value = 42;
-std::cout << std::get<int>(value) << std::endl;
+// Concaténation
+std::string nomComplet = prenom + " " + nom;  // "Alice Smith"
 
-value = "hello";
-std::cout << std::get<std::string>(value) << std::endl;
-
-value = 3.14;
-std::cout << std::get<double>(value) << std::endl;
-
-// Visite par type
-std::visit([](const auto& val) { std::cout << val << std::endl; }, value);
+// Méthodes utiles
+size_t taille = prenom.length();  // 5
+prenom.append(" Junior");         // "Alice Junior"
+bool contient = nom.find("mi") != std::string::npos;  // true
 ```
 
-### Assertions
-```cpp
-#include <cassert>
+## 8. Entrées/Sorties Console
 
-void process(int* ptr, int size) {
-    assert(ptr != nullptr && "Pointer cannot be null");
-    assert(size > 0 && "Size must be positive");
-    // ...
-}
+### Sorties Console
+```cpp
+#include <iostream>
+
+// Affichage simple
+std::cout << "Bonjour" << std::endl;
+
+// Affichage de variables
+int age = 25;
+std::cout << "J'ai " << age << " ans." << std::endl;
+
+// Formatage (basique)
+std::cout << "Prix: " << 19.99 << " euros" << std::endl;
+```
+
+### Entrées Console
+```cpp
+#include <iostream>
+#include <string>
+
+// Lecture d'un entier
+int nombre;
+std::cout << "Entrez un nombre: ";
+std::cin >> nombre;
+
+// Lecture d'une chaîne
+std::string nom;
+std::cout << "Entrez votre nom: ";
+std::cin >> nom;  // Attention: s'arrête au premier espace
+
+// Lecture d'une ligne complète
+std::string ligne;
+std::cin.ignore();  // Pour éviter les problèmes après un std::cin
+std::cout << "Entrez une phrase: ";
+std::getline(std::cin, ligne);
+```
+
+### Manipulation des Flux
+```cpp
+#include <iostream>
+#include <iomanip>
+
+// Précision des nombres à virgule
+double pi = 3.14159265358979;
+std::cout << std::fixed << std::setprecision(2) << pi << std::endl;  // 3.14
+
+// Largeur de champ et alignement
+std::cout << std::setw(10) << std::right << 42 << std::endl;  // "        42"
+
+// Bases numériques
+int n = 42;
+std::cout << std::dec << n << std::endl;  // 42 (décimal)
+std::cout << std::hex << n << std::endl;  // 2a (hexadécimal)
+std::cout << std::oct << n << std::endl;  // 52 (octal)
 ```
 
 ## Conclusion
 
-Ce module vous a présenté les fondamentaux de C++ revisités avec les améliorations de C++17. Ces concepts forment la base solide nécessaire pour aborder les modules suivants qui exploreront la programmation orientée objet et d'autres fonctionnalités avancées de C++17.
+Ce module vous a présenté les concepts fondamentaux de la programmation en C++. La maîtrise de ces bases est essentielle avant d'explorer les fonctionnalités plus avancées et les spécificités de C++17 que nous aborderons dans les modules suivants.
 
 ## Ressources Complémentaires
 
-- [cppreference.com](https://en.cppreference.com/) - Documentation complète et à jour
-- [C++ Core Guidelines](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines) - Bonnes pratiques modernes
-- [C++17 - The Complete Guide](https://www.cppstd17.com/) par Nicolai M. Josuttis
+- [C++ Reference](https://en.cppreference.com/) - Documentation officielle
+- [Learn C++](https://www.learncpp.com/) - Tutoriels détaillés pour débutants
+- [C++ Primer](http://www.informit.com/store/c-plus-plus-primer-9780321714114) par Stanley Lippman, Josée Lajoie, et Barbara E. Moo
+- [Programming: Principles and Practice Using C++](http://www.stroustrup.com/programming.html) par Bjarne Stroustrup
