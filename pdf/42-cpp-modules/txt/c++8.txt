@@ -1,0 +1,29 @@
+C++ Module 08: Understanding Templated Containers, Iterators, and Algorithms
+This module introduces you to the Standard Template Library (STL) containers and algorithms, enabling you to write efficient code using predefined generic data structures.
+Key Concepts Covered
+Exercise 00: Easy Find
+Implementation of a generic function template for searching in containers
+Working with STL containers to store and manipulate data
+Handling exceptions for unfound elements
+Using iterators to access container elements
+Exercise 01: Span Class
+Creating a class to store a range of integers
+Implementing member functions for finding spans between elements
+Managing memory allocation and limits for fixed-size containers
+Supporting large data sets with at least 10,000 numbers
+Using iterators to add ranges of elements efficiently
+Exercise 02: Mutated Abomination
+Extending the std::stack container to make it iterable
+Understanding container adaptors and their limitations
+Implementing iterators for non-iterable STL containers
+Creating a MutantStack class that inherits from std::stack
+Preserving all original functionality while adding iteration capabilities
+Implementation Requirements
+All implementations should follow these key requirements:
+Using STL containers and algorithms appropriately
+Implementing template-based solutions for enhanced flexibility
+Creating proper error handling with exceptions
+Following C++98 standard
+Understanding iterator concepts and container behaviors
+Writing comprehensive tests for all functionality
+This module provides a practical introduction to the powerful features of the STL, emphasizing how to leverage existing containers and algorithms to create efficient, reusable code.

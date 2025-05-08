@@ -1,0 +1,41 @@
+C++ Module 05: Repetition and Exceptions
+This module introduces exception handling in C++ through a bureaucratic simulation, teaching you how to handle error conditions gracefully.
+Key Concepts Covered
+Exercise 00: Mommy, when I grow up, I want to be a bureaucrat!
+
+Implementation of a Bureaucrat class with constrained grade range
+Custom exception classes for handling invalid grades
+Exception throwing and catching mechanisms
+Operator overloading for output formatting
+
+Exercise 01: Form up, maggots!
+
+Creating a Form class with signing requirements
+Relationships between Bureaucrat and Form classes
+Additional exception handling for form operations
+Implementing signing functionality with proper validation
+
+Exercise 02: No, you need form 28B, not 28C...
+
+Converting Form to an abstract class (AForm)
+Implementing concrete form types with specific behaviors
+Using virtual functions and inheritance hierarchies
+Executing forms with proper permission checks
+
+Exercise 03: At least this beats coffee-making
+
+Implementing an Intern class for form creation
+Factory design pattern for object instantiation
+Creating a simplified interface for form management
+Avoiding excessive if/else structures with elegant design
+
+Implementation Requirements
+
+Exception classes do not need to follow Orthodox Canonical Form
+All other classes must follow Orthodox Canonical Form
+Proper hierarchical relationships between classes
+Thorough error checking and appropriate exception handling
+Clean message output for all operations
+Following C++98 standard
+
+This module provides practical experience with exception handling and more complex class hierarchies, teaching essential skills for robust error management in C++ applications.

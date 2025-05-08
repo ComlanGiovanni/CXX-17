@@ -1,0 +1,45 @@
+C++ Module 03: Inheritance
+Module 03 introduces you to inheritance, one of the fundamental pillars of object-oriented programming in C++, allowing you to create new classes that reuse, extend, and modify behavior from existing classes.
+Key Concepts Covered
+Exercise 00: Basic Class Implementation
+
+Creating a ClapTrap class with attributes (hit points, energy points, attack damage)
+Implementing member functions for game-like behavior (attack, take damage, repair)
+Proper message display for actions and constructor/destructor calls
+Resource management using class attributes
+
+Exercise 01: Basic Inheritance
+
+Deriving a ScavTrap class from the base ClapTrap class
+Understanding inheritance syntax and access modifiers
+Properly initializing derived class with different attribute values
+Adding specialized functionality (guardGate)
+Demonstrating constructor/destructor chaining in inheritance
+
+Exercise 02: Multiple Derived Classes
+
+Creating another derived class FragTrap from ClapTrap
+Further practice with inheritance mechanics
+Implementing unique special abilities per class type
+Consistent design patterns across related classes
+
+Exercise 03: Diamond Inheritance
+
+Multiple inheritance with DiamondTrap inheriting from both FragTrap AND ScavTrap
+Addressing the "diamond problem" in inheritance hierarchies
+Managing name conflicts between base and derived classes
+Proper initialization across complex inheritance chains
+Special member function (whoAmI) to demonstrate dual inheritance
+
+Implementation Requirements
+Your implementation should focus on:
+
+Orthodox Canonical Form for all classes
+Proper constructor/destructor chaining
+Appropriate access modifiers for inheritance
+Clear message outputs to demonstrate execution flow
+Thoughtful test cases to validate behavior
+C++98 compliance with provided compilation flags
+Avoiding memory leaks
+
+This module builds a crucial foundation for understanding inheritance relationships that will be extended with polymorphism concepts in Module 04.

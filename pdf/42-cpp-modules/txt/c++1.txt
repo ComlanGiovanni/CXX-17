@@ -1,0 +1,54 @@
+C++ Module 01 Summary
+This module covers memory allocation, pointers to members, references, and switch statements.
+Key Concepts:
+
+Stack vs. heap memory allocation
+Pointers and references
+String manipulation without standard functions
+File operations
+Pointers to member functions
+Switch statement logic
+
+Exercises:
+Exercise 00: BraiiiiiiinnnzzzZ
+
+Zombie class creation with name attribute
+Member function for zombie announcements
+Functions for creating zombies on heap and stack
+Memory management considerations
+
+Exercise 01: Moar brainz!
+
+Creating multiple zombies in a single allocation
+Array management and initialization
+Proper deallocation to avoid memory leaks
+
+Exercise 02: HI THIS IS BRAIN
+
+Comparing pointers and references
+Memory address display and manipulation
+Understanding reference syntax and behavior
+
+Exercise 03: Unnecessary violence
+
+Weapon class with type attribute
+HumanA and HumanB classes with different weapon handling
+Reference vs. pointer implementation differences
+
+Exercise 04: Sed is for losers
+
+File content replacement program
+String operations without using replace function
+Error handling for file operations
+
+Exercise 05: Harl 2.0
+
+Class with different message levels (DEBUG, INFO, WARNING, ERROR)
+Implementation using pointers to member functions
+Message dispatching based on level
+
+Exercise 06: Harl filter
+
+Message filtering based on severity level
+Switch statement implementation
+Message cascading by level

@@ -1,0 +1,30 @@
+C++ Module 09: Applying STL Containers and Algorithms
+This module builds on your knowledge of the STL from Module 08 and focuses on practical applications of containers and algorithms to solve real-world problems.
+Key Concepts Covered
+Exercise 00: Bitcoin Exchange
+Implementation of a bitcoin value calculator using STL containers
+Reading and processing data from CSV files
+Managing date-based lookup with appropriate containers
+Implementing proper error handling and validation
+Finding closest matches when exact dates don't exist
+Exercise 01: Reverse Polish Notation
+Creating a calculator for RPN mathematical expressions
+Using stack-based algorithms for expression evaluation
+Handling mathematical operations (+, -, *, /)
+Managing errors with invalid input or mathematical operations
+Processing command-line arguments efficiently
+Exercise 02: PmergeMe
+Implementing the Ford-Johnson merge-insert sort algorithm
+Using at least two different STL containers for the same task
+Comparing performance between different container implementations
+Processing and sorting large sequences of positive integers
+Measuring and reporting execution time differences
+Implementation Requirements
+All implementations should follow these key requirements:
+Using appropriate STL containers for each exercise
+Employing a different container for each exercise (except for PmergeMe which uses two)
+Creating well-structured Makefiles that follow proper conventions
+Writing robust error handling for all edge cases
+Following C++98 standard
+Comparing container performance characteristics
+This module provides practical experience with STL containers and algorithms by implementing three distinct applications, each requiring careful selection of the appropriate data structures for optimal performance and functionality.

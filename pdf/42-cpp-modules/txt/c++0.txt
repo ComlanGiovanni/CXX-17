@@ -1,0 +1,39 @@
+C++ Module 00 Summary
+This introductory module covers the basics of C++ including namespaces, classes, member functions, and I/O streams.
+Key Concepts:
+
+Transition from C to C++ programming
+Object-oriented programming fundamentals
+Class structure and member functions
+Public and private access control
+I/O using C++ streams
+Static members and const qualification
+
+Exercises:
+Exercise 00: Megaphone
+
+Basic string manipulation program
+Command-line argument processing
+Uppercase conversion and output formatting
+
+Exercise 01: My Awesome PhoneBook
+
+PhoneBook and Contact class implementation
+Fixed-size contact storage (maximum 8 contacts)
+User interface for adding and searching contacts
+Data formatting and display
+
+Exercise 02: The Job Of Your Dreams
+
+Reverse engineering class implementation
+Reconstructing source file from header and log file
+Understanding class behavior from test outputs
+Matching existing functionality precisely
+
+Throughout all modules, code must:
+
+Compile with -Wall -Wextra -Werror and -std=c++98
+Follow proper naming conventions
+Use orthodox canonical form (from Module 02 onward)
+Include proper header guards
+Avoid memory leaks

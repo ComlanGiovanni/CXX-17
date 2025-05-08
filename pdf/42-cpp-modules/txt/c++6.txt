@@ -1,0 +1,77 @@
+C++ Module 06: C++ casts
+This module introduces different casting mechanisms in C++, providing a deep understanding of type conversion techniques.
+Key Concepts Covered
+Exercise 00: Conversion of scalar types
+
+Implementation of a ScalarConverter class with static convert method
+Converting between char, int, float, and double representations
+Handling special values like NaN, infinity
+Proper display of conversion results with appropriate formatting
+
+Exercise 01: Serialization
+
+Creating a Serializer class for pointer/integer conversion
+Converting between Data pointers and unsigned integer values
+Understanding memory representation of pointers
+Safely retrieving original pointers from serialized values
+
+Exercise 02: Identify real type
+
+Implementing a Base class with virtual destructor
+Creating derived classes (A, B, C) inheriting from Base
+Generating random instances of derived classes
+Identifying actual types without using RTTI (typeinfo)
+
+Implementation Requirements
+
+Appropriate casting mechanism for each exercise
+Proper handling of edge cases and invalid conversions
+Clean design with static methods where appropriate
+Orthodox Canonical Form for all classes
+Thorough testing for all functionality
+Following C++98 standard
+
+This module provides practical experience with C++'s casting mechanisms, teaching essential skills for safe and effective type conversions in C++ applications.
+C++ Module 04: Understanding Polymorphism, Abstract Classes, and Interfaces
+This module builds upon your knowledge of inheritance from Module 03 and introduces key object-oriented programming concepts that enable flexible and extensible code design.
+Key Concepts Covered
+Exercise 00: Polymorphism
+
+Implementation of a simple class hierarchy with an Animal base class
+Derived classes Dog and Cat that inherit and override behavior
+Virtual functions to enable runtime polymorphism
+Demonstration of proper vs. improper polymorphism using WrongAnimal and WrongCat
+
+Exercise 01: Memory Management with Inheritance
+
+Deep vs. shallow copying with pointer members
+Proper memory allocation and deallocation in a class hierarchy
+Implementation of a Brain class that Dog and Cat objects own
+Creating arrays of polymorphic objects
+Ensuring no memory leaks in polymorphic structures
+
+Exercise 02: Abstract Classes
+
+Converting a concrete base class to an abstract class
+Pure virtual functions that derived classes must implement
+Understanding when and why to make classes non-instantiable
+Maintaining polymorphic behavior with abstract base classes
+
+Exercise 03: Interfaces and Design Patterns
+
+Implementing interface-like behavior using pure abstract classes
+Multiple inheritance for the DiamondTrap class
+Factory pattern with the MateriaSource class
+Component-based design with the inventory system
+Complex object relationships and memory management
+
+Implementation Requirements
+
+Orthodox Canonical Form for all classes (unless specified otherwise)
+Proper construction/destruction order in inheritance chains
+Memory leak avoidance with proper resource management
+Comprehensive testing for all functionality
+Following C++98 standard
+Distinguishable messages for constructors/destructors of each class
+
+This module provides a solid foundation in key OOP techniques that enhance code flexibility and reusability while maintaining proper resource management, particularly valuable for game development and systems with complex object relationships.

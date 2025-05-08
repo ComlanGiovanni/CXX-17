@@ -1,0 +1,28 @@
+C++ Module 07: Understanding Templates and Generic Programming
+This module introduces you to template programming, which enables you to write flexible and reusable code that works with different data types.
+Key Concepts Covered
+Exercise 00: Function Templates
+Implementation of simple function templates: swap, min, and max
+Working with multiple data types through a single template interface
+Understanding template type requirements and constraints
+Applying function templates with different data types
+Exercise 01: Iter - Template Function Implementation
+Creating a function template that works with arrays of any type
+Passing function pointers as template parameters
+Implementing a generic iterator function that processes every element of an array
+Understanding how to apply function templates to different data structures
+Exercise 02: Array Class Template
+Developing a generic array container using class templates
+Implementing proper memory management for template classes
+Creating array access operators and boundary checking
+Supporting various data types in a custom container class
+Managing exceptions for boundary violations
+Implementation Requirements
+All implementations should follow these key requirements:
+Templates must be defined in header files
+Full implementation of function templates and class templates
+Comprehensive testing with multiple data types
+Proper memory allocation and deallocation with operator new[]
+Exception throwing for invalid operations
+Following C++98 standard
+This module provides a solid foundation in templated programming techniques, enabling you to write code that works with multiple data types while maintaining type safety and efficiency.

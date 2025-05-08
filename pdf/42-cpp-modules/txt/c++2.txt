@@ -1,0 +1,41 @@
+C++ Module 02: Ad-hoc polymorphism, operator overloading and the Orthodox Canonical class form
+This module introduces you to operator overloading and the Orthodox Canonical Form, providing essential foundations for creating robust C++ classes.
+Key Concepts Covered
+Exercise 00: My First Class in Orthodox Canonical Form
+
+Implementation of a fixed-point number class in Orthodox Canonical Form
+Understanding of private/public members and constant static members
+Basic getter and setter functions for accessing raw bits
+Proper implementation of constructors, destructors, and copy operations
+
+Exercise 01: Towards a more useful fixed-point number class
+
+Converting between integer, floating-point, and fixed-point values
+Implementation of conversion constructors and methods
+Overloading the insertion operator for output streaming
+Applying fixed-point concepts to represent non-integer values
+
+Exercise 02: Now we're talking
+
+Implementing comparison operators (>, <, >=, <=, ==, !=)
+Adding arithmetic operators (+, -, *, /)
+Implementing increment/decrement operators (pre/post)
+Creating static min/max functions for fixed-point number comparison
+
+Exercise 03: BSP
+
+Implementing a Point class using the Fixed class
+Understanding Binary Space Partitioning concepts
+Creating a function to determine if a point is inside a triangle
+Practical application of fixed-point arithmetic
+
+Implementation Requirements
+
+All classes must follow the Orthodox Canonical Form
+Proper handling of constant attributes
+Accurate fixed-point arithmetic operations
+Clean separation of class definition (.hpp) and implementation (.cpp)
+Thorough testing for all functionality
+Following C++98 standard
+
+This module provides practical experience with operator overloading and class design patterns that form the foundation of robust C++ programming, particularly useful for graphics, simulation, and financial applications where precise numeric representation is essential.
