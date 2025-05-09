@@ -6,22 +6,22 @@ Toutes les solutions sont disponibles dans le dossier `files/`. Consultez le [RE
 
 ### Exercice 1: Pointeurs et Références
 - [Exercice 1.1: Manipulation de Pointeurs](files/pointeurs.cpp)
-- [Exercice 1.2: Arithmétique des Pointeurs](files/arith_pointeurs.cpp)
+- [Exercice 1.2: Arithmétique des Pointeurs](files/arithmetique_pointeurs.cpp)
 - [Exercice 1.3: Références](files/references.cpp)
 
 ### Exercice 2: Gestion de la Mémoire
-- [Exercice 2.1: Allocation Dynamique](files/allocation.cpp)
-- [Exercice 2.2: Détection de Fuites Mémoire](files/fuites_memoire.cpp)
-- [Exercice 2.3: Gestion des Erreurs d'Allocation](files/erreurs_allocation.cpp)
+- [Exercice 2.1: Allocation Dynamique](files/allocation_dynamique.cpp)
+- [Exercice 2.2: Détection de Fuites Mémoire](files/detection_fuites.cpp)
+- [Exercice 2.3: Gestion des Erreurs d'Allocation](files/gestion_erreurs_allocation.cpp)
 
 ### Exercice 3: Structures et Énumérations
 - [Exercice 3.1: Système de Gestion d'Étudiants](files/gestion_etudiants.cpp)
 - [Exercice 3.2: Énumérations](files/enumerations.cpp)
-- [Exercice 3.3: Organisation du Code avec des Structures](files/inventaire.cpp)
+- [Exercice 3.3: Organisation du Code avec des Structures](files/gestion_inventaire.cpp)
 
 ### Exercice 4: Conteneurs STL
-- [Exercice 4.1: std::vector](files/vector.cpp)
-- [Exercice 4.2: std::array](files/array.cpp)
+- [Exercice 4.1: std::vector](files/vector_demo.cpp)
+- [Exercice 4.2: std::array](files/array_demo.cpp)
 - [Exercice 4.3: Migration de Tableaux C vers Conteneurs STL](files/migration_tableaux.cpp)
 
 ### Exercice 5: Manipulation de Chaînes

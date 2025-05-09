@@ -37,6 +37,16 @@ make clean
 | vector_demo.cpp | Solution de l'exercice 4.1: std::vector |
 | array_demo.cpp | Solution de l'exercice 4.2: std::array |
 | migration_tableaux.cpp | Solution de l'exercice 4.3: Migration de Tableaux C vers Conteneurs STL |
+| chaines_c.cpp | Solution de l'exercice 5.1: Traitement de Chaînes Style C |
+| string.cpp | Solution de l'exercice 5.2: Traitement avec std::string |
+| parseur_texte.cpp | Solution de l'exercice 5.3: Parseur de Texte Simple |
+| efficacite_passage.cpp | Solution de l'exercice 6.1: Efficacité des Méthodes de Passage |
+| passage_const.cpp | Solution de l'exercice 6.2: Passage Constant et Non Constant |
+| chainage_fonctions.cpp | Solution de l'exercice 6.3: Chaînage de Fonctions |
+| variables_statiques.cpp | Solution de l'exercice 7.1: Variables Statiques |
+| portee_variables.cpp | Solution de l'exercice 7.2: Variables Globales vs Locales |
+| gestion_ressources.cpp | Solution de l'exercice 7.3: Gestion Automatique de Ressources |
+| editeur_texte.cpp | Projet Mini: Éditeur de Texte Simple |
 
 ## Remarques importantes
 
@@ -46,5 +56,8 @@ Ces programmes démontrent les concepts fondamentaux des structures de données 
 2. **Gestion de la mémoire**: Allocation dynamique, détection et prévention des fuites mémoire.
 3. **Structures et énumérations**: Organisation des données et utilisation des énumérations.
 4. **Conteneurs STL**: Utilisation des conteneurs modernes (vector, array) et migration des tableaux C vers la STL.
+5. **Manipulation de chaînes**: Comparaison entre les approches style C et C++ moderne.
+6. **Passage de paramètres**: Différentes méthodes de passage et leur impact sur les performances.
+7. **Portée et durée de vie**: Gestion des variables et des ressources.
 
 Chaque programme contient des commentaires détaillés pour faciliter la compréhension des concepts.

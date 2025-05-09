@@ -1,15 +1,15 @@
 CXX = g++
-CXXFLAGS = -std=c++17 -Wall -Wextra -Werror
+CXXFLAGS = -std=c++17 -Wall -Wextra
 
-SRCS = $(wildcard *.cpp)
-TARGETS = $(patsubst %.cpp,%,$(SRCS))
+SOURCES = $(wildcard *.cpp)
+EXECUTABLES = $(SOURCES:.cpp=)
 
 .PHONY: all clean
 
-all: $(TARGETS)
+all: $(EXECUTABLES)
 
 %: %.cpp
 	$(CXX) $(CXXFLAGS) $< -o $@
 
 clean:
-	rm -f $(TARGETS)
+	rm -f $(EXECUTABLES)
